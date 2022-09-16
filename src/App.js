@@ -8,7 +8,9 @@ import FollowerCard from "./FollowerCard/FollowerCard";
 import React, { useState } from "react";
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
+
+  const [searchText, setSearchText] = useState("");
 
   const handleData = async (name) => {
     const res = await fetch(`https://api.github.com/users/${name}`);
@@ -19,20 +21,32 @@ function App() {
   return (
     <div className="mt-5">
       <Container>
-        <Search handleData={handleData} />
-        <Cards user={user} />
-        <Row>
-          <Col md={6}>
-            <UserCard user={user} />
-          </Col>
-          <Col md={6}>
-            <FollowerCard
-              user={user}
-              setUser={setUser}
-              handleData={handleData}
-            />
-          </Col>
-        </Row>
+        <Search
+          handleData={handleData}
+          searchText={searchText}
+          setSearchText={setSearchText}
+        />
+        {user ? (
+          <>
+            <Cards user={user} />
+            <Row>
+              <Col md={6}>
+                <UserCard user={user} />
+              </Col>
+              <Col md={6}>
+                <FollowerCard
+                  user={user}
+                  setUser={setUser}
+                  handleData={handleData}
+                  searchText={searchText}
+                  setSearchText={setSearchText}
+                />
+              </Col>
+            </Row>
+          </>
+        ) : (
+          ""
+        )}
       </Container>
     </div>
   );

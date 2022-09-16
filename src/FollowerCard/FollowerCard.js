@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import "./FollowerCard.css";
 import { useEffect } from "react";
 
-const FollowerCard = ({ user, setUser, handleData }) => {
+const FollowerCard = ({ user, setUser, handleData, setSearchText }) => {
   const [followers, setFollowers] = useState([]);
 
   // const handleFollower = (follower) => {
@@ -26,16 +26,22 @@ const FollowerCard = ({ user, setUser, handleData }) => {
 
   console.log(followers);
 
+  const searchFollower = (follower) => {
+    setSearchText(follower.login);
+    handleData(follower.login)
+  }
+
   return (
     <div className="follower-card mt-4 mb-4 p-4">
       <h5 className="">Followers</h5>
-      <div>
+      <div className="follower-list">
         {followers.map((follower) => {
           return (
-            <>
+            <Fragment 
+            key={follower.id}>
               <div
-                // onClick={handleFollower(follower.login)}
-                // key={follower.id}
+          
+                onClick={() => searchFollower(follower)}
                 className="follower-details d-flex my-3 p-3"
               >
                 <div className="follower-image">
@@ -44,10 +50,10 @@ const FollowerCard = ({ user, setUser, handleData }) => {
                 </div>
                 <div className="px-4 py-2">
                   <h6>{follower.login}</h6>
-                  <p>{follower.html_url}</p>
+                  <p className="follower-url">{follower.html_url}</p>
                 </div>
               </div>
-            </>
+            </Fragment>
           );
         })}
       </div>

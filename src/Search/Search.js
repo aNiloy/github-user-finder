@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Search.css";
 import { FaSearch } from "react-icons/fa";
 
-const Search = ({ handleData }) => {
-  const [searchText, setSearchText] = useState("");
+
+const Search = ({ handleData, searchText, setSearchText }) => {
+
+  // useEffect(() => {
+  //   setSearchText('user');
+  //   handleData('user');
+  //   // eslint-disable-next-line
+  // }, [])
+ 
   const onSearchTextChange = (e) => {
     setSearchText(e.target.value);
   };

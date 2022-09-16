@@ -1,8 +1,14 @@
 .follower-card {
   background-color: white;
   border-radius: 10px;
-  height: 25rem;
+  
+ 
+}
+
+.follower-list{
   overflow-y: scroll;
+  overflow-x: hidden;
+  height: 20rem;
 }
 
 .follower-image img {
@@ -14,4 +20,8 @@
   background-color: #ecd4ce;
   border-radius: 10px;
   transition: 0.2s;
+}
+
+.follower-url {
+  font-size: smaller;
 }
