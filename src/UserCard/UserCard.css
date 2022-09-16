@@ -1,7 +1,6 @@
 .user-card {
   background-color: white;
   border-radius: 10px;
-  height: 25rem;
 }
 
 .user-card img {
@@ -15,4 +14,11 @@
   background-color: #36adbc;
   color: white;
   font-weight: 500;
+}
+
+.user-details{
+
+  height: 20rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

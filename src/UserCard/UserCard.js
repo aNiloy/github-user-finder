@@ -24,6 +24,7 @@ const UserCard = ({ user }) => {
   return (
     <div className="user-card mt-4 mb-4 p-4">
       <h5 className="">User</h5>
+      <div className="user-details">
       <div className="pt-4">
         <img src={user.avatar_url} alt="user" srcSet=""></img>
         <div className="name">
@@ -32,7 +33,8 @@ const UserCard = ({ user }) => {
         </div>
         <button className="my-3 p-2">Follow</button>
       </div>
-      <p>Fillertext cause Emmet is broken LOL.</p>
+      <p>{user.bio}
+      </p>
       <div className="location">
         <HiLocationMarker />
         <span>{user.location}</span>
@@ -44,6 +46,7 @@ const UserCard = ({ user }) => {
       <div className="link">
         <FaLink />
         <span>{user.html_url}</span>
+      </div>
       </div>
     </div>
   );

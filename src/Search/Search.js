@@ -19,6 +19,12 @@ const Search = ({ handleData, searchText, setSearchText }) => {
     handleData(searchText);
   };
 
+  const handleClickEnter = (key) => {
+    if(key === "Enter") {
+      handleData(searchText);
+    }
+  }
+
   return (
     <>
       <div>
@@ -29,6 +35,7 @@ const Search = ({ handleData, searchText, setSearchText }) => {
             type="text"
             value={searchText}
             onChange={onSearchTextChange}
+            onKeyDown={e => handleClickEnter(e.key)}
           ></input>
 
           <button type="submit" onClick={handleSubmit}>
