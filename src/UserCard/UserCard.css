@@ -1,0 +1,18 @@
+.user-card {
+  background-color: white;
+  border-radius: 10px;
+  height: 25rem;
+}
+
+.user-card img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.user-card button {
+  border: none;
+  border-radius: 5px;
+  background-color: #36adbc;
+  color: white;
+  font-weight: 500;
+}

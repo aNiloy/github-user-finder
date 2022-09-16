@@ -1,0 +1,17 @@
+.follower-card {
+  background-color: white;
+  border-radius: 10px;
+  height: 25rem;
+  overflow-y: scroll;
+}
+
+.follower-image img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.follower-details:hover {
+  background-color: #ecd4ce;
+  border-radius: 10px;
+  transition: 0.2s;
+}

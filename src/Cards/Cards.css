@@ -1,0 +1,15 @@
+.card-section {
+  margin: auto;
+}
+
+.cards {
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card-icon {
+  display: flex;
+  justify-content: center;
+}
